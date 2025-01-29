@@ -1,0 +1,40 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #f8f9fa;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 50px;
+}
+
+.first {
+  display: flex;
+}
+
+.second {
+  display: flex;
+}
+
+.navList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.navList li {
+  margin-right: 20px;
+}
+
+.navLink {
+  text-decoration: none;
+  color: black;
+  padding: 10px 15px;
+  transition: background-color 0.3s;
+}
+
+.navLink:hover {
+  background-color: #e2e6ea;
+  border-radius: 5px;
+}
