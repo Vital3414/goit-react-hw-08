@@ -5,9 +5,9 @@ import {
   selectIsError,
   selectIsLoading,
   selectFilteredContacts,
-} from "../../redux/contactsSlice.js";
+} from "../../redux/contacts/slice.js";
 import { useEffect } from "react";
-import { fetchContacts } from "../../redux/contactsOps.js";
+import { fetchContacts } from "../../redux/auth/options.js";
 
 export default function ContactList() {
   const dispatch = useDispatch();
