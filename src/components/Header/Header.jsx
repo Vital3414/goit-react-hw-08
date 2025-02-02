@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import css from "./Header.module.css";
 import { selectIsLoggedIn, selectUser } from "../../redux/contacts/slice";
 import { useDispatch, useSelector } from "react-redux";
-import { logout } from "../../redux/auth/operations";
+import { logout } from "../../redux/contacts/operations";
 
 const Header = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);

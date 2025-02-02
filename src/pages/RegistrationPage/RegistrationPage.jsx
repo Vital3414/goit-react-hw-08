@@ -3,7 +3,7 @@ import * as Yup from "yup";
 import css from "./RegistrationPage.module.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { register } from "../../redux/auth/operations";
+import { register } from "../../redux/contacts/operations";
 
 const RegistrationForm = () => {
   const initialValues = {
