@@ -9,7 +9,7 @@ import NotFound from "../../pages/NotFoundPage/NotFoundPage.jsx";
 import RegistrationForm from "../../pages/RegistrationPage/RegistrationPage.jsx";
 import HomeForm from "../../pages/HomePage/HomePage.jsx";
 import LoginForm from "../../pages/LoginPage/LoginPage.jsx";
-import { refreshUser } from "../../redux/contacts/operations.js";
+import { refreshUser } from "../../redux/auth/operations.js";
 import { selectIsRefreshing } from "../../redux/contacts/slice.js";
 import AppBar from "./AppBar.jsx";
 import RestrictedRoute from "./RestrictedRoute.jsx";

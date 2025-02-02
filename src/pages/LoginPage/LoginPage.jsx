@@ -2,7 +2,7 @@ import { Field, Form, Formik } from "formik";
 import css from "./LoginPage.module.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { login } from "../../redux/contacts/operations";
+import { login } from "../../redux/auth/operations";
 
 const LoginForm = () => {
   const initialValues = {
