@@ -22,6 +22,7 @@ export default function ContactForm() {
 
   return (
     <div className={css.container}>
+      <h2 className={css.title}>Додати контакт</h2>
       <Formik
         initialValues={{ name: "", number: "" }}
         validationSchema={UserSchema}

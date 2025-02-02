@@ -21,11 +21,11 @@ export default function ContactList() {
   const isLoading = useSelector(selectIsLoading);
 
   if (isError) {
-    return <h2>Помилка завантаження...</h2>;
+    return <h2 className={css.error}>Помилка завантаження...</h2>;
   }
 
   if (isLoading) {
-    return <h2>Завантаження...</h2>;
+    return <h2 className={css.loading}>Завантаження...</h2>;
   }
 
   if (contacts.length === 0) {
@@ -34,13 +34,11 @@ export default function ContactList() {
 
   return (
     <ul className={css.list}>
-      {contacts.map((contact) => {
-        return (
-          <li className={css.item} key={contact.id}>
-            <Contact {...contact} />
-          </li>
-        );
-      })}
+      {contacts.map((contact) => (
+        <li className={css.item} key={contact.id}>
+          <Contact {...contact} />
+        </li>
+      ))}
     </ul>
   );
 }
