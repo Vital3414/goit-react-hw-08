@@ -9,6 +9,10 @@ export const setAuthHeader = (token) => {
   goitApi.defaults.headers.common.Authorization = `Bearer ${token}`;
 };
 
+export const clearAuthHeader = () => {
+  delete goitApi.defaults.headers.common.Authorization;
+};
+
 export const register = createAsyncThunk(
   "auth/register",
   async (credentials, thunkAPI) => {
@@ -38,6 +42,7 @@ export const login = createAsyncThunk(
 export const logout = createAsyncThunk("auth/logout", async (_, thunkAPI) => {
   try {
     const { data } = await goitApi.post("users/logout");
+    clearAuthHeader();
     return data;
   } catch (error) {
     return thunkAPI.rejectWithValue(error.message);
@@ -49,12 +54,11 @@ export const refreshUser = createAsyncThunk(
   async (_, thunkAPI) => {
     const savedToken = thunkAPI.getState().auth.token;
     if (!savedToken) {
-      return thunkAPI.rejectWithValue("token is not exist");
+      return thunkAPI.rejectWithValue("token does not exist");
     }
     setAuthHeader(savedToken);
     try {
       const { data } = await goitApi.get("users/current");
-
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);

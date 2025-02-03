@@ -1,10 +1,11 @@
 import { Outlet } from "react-router";
-import Header from "./Header/Header";
+import AppBar from "./AppBar/AppBar";
 
-const Layout = () => {
+const Layout = ({ children }) => {
   return (
     <div>
-      <Header />
+      <AppBar />
+      {children}
       <Outlet />
     </div>
   );

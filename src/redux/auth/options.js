@@ -36,3 +36,12 @@ export const addContact = createAsyncThunk(
     }
   }
 );
+
+export const logOut = createAsyncThunk("auth/logOut", async (_, thunkAPI) => {
+  try {
+    localStorage.removeItem("token");
+    return;
+  } catch (error) {
+    return thunkAPI.rejectWithValue(error.message);
+  }
+});
