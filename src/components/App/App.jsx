@@ -11,6 +11,7 @@ import LoginForm from "../../pages/LoginPage/LoginPage.jsx";
 import ContactsPage from "../../pages/ContactsPage/ContactsPage.jsx";
 import RestrictedRoute from "./RestrictedRoute.jsx";
 import PrivateRoute from "../PrivateRoute/PrivateRoute.jsx";
+import Loader from "../Loader/Loader.jsx";
 
 export default function App() {
   const dispatch = useDispatch();
@@ -20,7 +21,9 @@ export default function App() {
     dispatch(refreshUser());
   }, [dispatch]);
 
-  return isRefreshing ? null : (
+  return isRefreshing ? (
+    <Loader />
+  ) : (
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<HomeForm />} />
